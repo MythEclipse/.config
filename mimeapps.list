@@ -1,6 +1,7 @@
 [Added Associations]
 video/x-matroska=mpv-2.desktop;
 image/vnd.microsoft.icon=com.google.Chrome.desktop;
+application/x-ipynb+json=antigravity.desktop;
 
 [Default Applications]
 text/html=brave-browser.desktop

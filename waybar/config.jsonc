@@ -1,203 +1,147 @@
 {
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 52,
-    "spacing": 0,
-    "margin-top": 0,
-    "margin-bottom": 0,
-    "margin-left": 10,
-    "margin-right": 10,
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 44,
+  "modules-left": ["custom/launch", "hyprland/workspaces", "custom/media"],
+  "modules-center": [
+    "custom/weather",
+    "custom/calendar",
+    "custom/google-calendar",
+    "clock",
+  ],
+  "modules-right": ["tray", "group/system-stats", "network", "group/power"],
 
-    "modules-left": [
-        "custom/power",
-        "hyprland/workspaces",
-        "mpris"
-    ],
-    "modules-center": [
-        "clock",
-        "hyprland/window"
-    ],
-    "modules-right": [
-        "tray",
-        "group/hardware",
-        "group/settings",
-        "battery"
-    ],
-
-    "custom/power": {
-        "format": "",
-        "on-click": "wlogout",
-        "tooltip": false
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "I",
+      "2": "II",
+      "3": "III",
+      "4": "IV",
+      "5": "V",
+      "6": "VI",
+      "urgent": "",
+      "active": "",
+      "default": "",
     },
+  },
 
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "on-click": "activate",
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "urgent": "",
-            "active": "",
-            "default": ""
-        },
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": []
-        }
+  "custom/launch": {
+    "format": "",
+    "on-click": "wofi --show drun",
+    "tooltip": false,
+  },
+
+  "custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 50,
+    "format-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": "",
     },
+    "exec": "~/.config/waybar/scripts/mediaplayer_live.py",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "escape": true,
+  },
 
-    "mpris": {
-        "format": "{player_icon}  {title} - {artist}",
-        "format-paused": "{status_icon}  {title} - {artist}",
-        "player-icons": {
-            "default": "",
-            "mpv": "",
-            "spotify": "",
-            "firefox": ""
-        },
-        "status-icons": {
-            "paused": ""
-        },
-        "max-length": 40
+  "custom/weather": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/weather_openmeteo.py",
+    "interval": 300,
+    "on-click": "xdg-open https://open-meteo.com/en/docs",
+  },
+
+  "custom/calendar": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/waybar_calendar.py",
+    "interval": 60,
+    "on-click": "xdg-open https://calendar.google.com",
+  },
+
+  "custom/google-calendar": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/.venv/bin/python3 ~/.config/waybar/scripts/google_calendar.py",
+    "interval": 60,
+    "on-click": "xdg-open https://calendar.google.com",
+  },
+
+  "clock": {
+    "format": "{:%H:%M:%S}  ",
+    "interval": 1,
+    "tooltip": false,
+  },
+
+  "group/system-stats": {
+    "orientation": "horizontal",
+    "modules": ["custom/system"],
+  },
+
+  "custom/system": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/system_stat.py",
+    "interval": 2,
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "  Connected",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⚠ Disconnected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10,
+  },
+
+  "group/power": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
     },
+    "modules": ["custom/power", "custom/lock", "custom/quit", "custom/reboot"],
+  },
 
-    "clock": {
-        "format": " {:%H:%M   %a, %b %d}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        }
-    },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wlogout",
+  },
 
-    "hyprland/window": {
-        "format": "{title}",
-        "max-length": 40,
-        "separate-outputs": true
-    },
+  "custom/lock": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "swaylock",
+  },
 
-    "group/hardware": {
-        "orientation": "horizontal",
-        "modules": [
-            "cpu",
-            "memory",
-            "temperature"
-        ]
-    },
+  "custom/quit": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exit",
+  },
 
-    "cpu": {
-        "format": " {usage}%",
-        "tooltip": true
-    },
-
-    "memory": {
-        "format": " {}%",
-        "tooltip": true
-    },
-
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""]
-    },
-
-    "group/settings": {
-        "orientation": "horizontal",
-        "modules": [
-            "network",
-            "bluetooth",
-            "pulseaudio",
-            "backlight"
-        ]
-    },
-
-    "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-
-    "bluetooth": {
-        "format": "",
-        "format-disabled": "",
-        "format-connected": " {num_connections}",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "on-click": "blueman-manager"
-    },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    "backlight": {
-        "device": "nvidia_0",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-scroll-up": "brightnessctl set 5%+",
-        "on-scroll-down": "brightnessctl set 5%-"
-    },
-
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 10
-    }
+  "custom/reboot": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "reboot",
+  },
 }

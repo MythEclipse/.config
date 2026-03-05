@@ -10,3 +10,27 @@
 [filesystem "Arch Linux|17.0.18|/dev/nvme1n1p3"]
 	timestampResolution = 1587 nanoseconds
 	minRacyThreshold = 0 nanoseconds
+[filesystem "Arch Linux|17.0.18|/dev/nvme0n1p2"]
+	timestampResolution = 4913 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Arch Linux|17.0.18|/dev/nvme0n1p3"]
+	timestampResolution = 1375 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Eclipse Adoptium|21.0.9|/dev/nvme1n1p3"]
+	timestampResolution = 4643 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Eclipse Adoptium|21.0.9|/dev/nvme0n1p3"]
+	timestampResolution = 3658 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Arch Linux|21.0.10|/dev/nvme0n1p3"]
+	timestampResolution = 33629 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Arch Linux|21.0.10|/dev/nvme1n1p3"]
+	timestampResolution = 12633 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Eclipse Adoptium|21.0.10|/dev/nvme0n1p2"]
+	timestampResolution = 3613 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[filesystem "Eclipse Adoptium|21.0.10|/dev/nvme1n1p2"]
+	timestampResolution = 3045 nanoseconds
+	minRacyThreshold = 0 nanoseconds

@@ -1,0 +1,174 @@
+/* 
+   Modern Island Theme for Waybar
+   Based on Catppuccin Mocha
+*/
+
+/* --- GLOBAL --- */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", "Font Awesome 6 Free", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border: 1px solid #cba6f7;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
+
+/* --- MODULE CONTAINERS (ISLANDS) --- */
+
+#custom-power,
+#workspaces,
+#mpris,
+#clock,
+#window,
+#tray,
+#battery,
+.modules-right > box > box {
+    background: #1e1e2e;
+    padding: 6px 14px;
+    margin: 6px 4px;
+    border-radius: 16px;
+    border: 1px solid #313244;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Groups (Hardware/Settings) should be transparent containers */
+#group-hardware,
+#group-settings {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* --- LEFT MODULES --- */
+
+#custom-power {
+    color: #f38ba8;
+    padding-left: 16px;
+    padding-right: 18px;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+#workspaces {
+    padding: 0 8px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #7f849c;
+    border-radius: 12px;
+    margin: 4px 2px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: #cba6f7;
+    background: #313244;
+    min-width: 30px;
+}
+
+#workspaces button:hover {
+    background: #313244;
+    color: #cdd6f4;
+}
+
+#mpris {
+    color: #a6e3a1;
+}
+
+/* --- CENTER MODULES --- */
+
+#clock {
+    color: #89b4fa;
+    font-size: 15px;
+    padding: 6px 20px;
+}
+
+#window {
+    color: #cdd6f4;
+}
+
+/* --- RIGHT MODULES --- */
+
+#tray {
+    padding: 0 14px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #f38ba8;
+}
+
+/* Hardware Group Colors */
+#cpu { color: #f38ba8; }
+#memory { color: #fab387; }
+#temperature { color: #f9e2af; }
+
+/* Settings Group Colors */
+#network { color: #89b4fa; }
+#bluetooth { color: #b4befe; }
+#pulseaudio { color: #cba6f7; }
+#backlight { color: #f9e2af; }
+
+/* Spacing for items inside groups */
+#cpu, #memory, #temperature,
+#network, #bluetooth, #pulseaudio, #backlight {
+    padding: 0 8px;
+}
+
+/* Battery */
+#battery {
+    color: #a6e3a1;
+    margin-right: 10px;
+}
+
+#battery.charging {
+    color: #a6e3a1;
+    animation: breathing 3s infinite;
+}
+
+#battery.warning:not(.charging) {
+    color: #fab387;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation: blink 0.5s infinite alternate;
+}
+
+/* --- ANIMATIONS --- */
+
+@keyframes blink {
+    to {
+        color: #1e1e2e;
+        background-color: #f38ba8;
+    }
+}
+
+@keyframes breathing {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}

@@ -1,0 +1,11 @@
+[StreamInputs]
+inputDevice=bluez_input.D8:2F:E6:27:F4:C7
+plugins=rnnoise#0,compressor#0,gate#0
+visiblePage=pluginsPage
+visiblePlugin=gate#0
+
+[StreamOutputs]
+outputDevice=bluez_output.D8:2F:E6:27:F4:C7
+
+[Window]
+visiblePage=inputPage

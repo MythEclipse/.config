@@ -1,174 +1,222 @@
 /* 
-   Modern Island Theme for Waybar
-   Based on Catppuccin Mocha
+   Hyper-Modern Neon Glass Theme
+   Designed for High Performance & Awe
 */
 
-/* --- GLOBAL --- */
+@define-color base   #1e1e2e;
+@define-color mantl  #181825;
+@define-color crust  #11111b;
+
+@define-color text     #cdd6f4;
+@define-color subtext0 #a6adc8;
+@define-color subtext1 #bac2de;
+
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color surface2 #585b70;
+
+@define-color overlay0 #6c7086;
+@define-color overlay1 #7f849c;
+@define-color overlay2 #9399b2;
+
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color sapphire  #74c7ec;
+@define-color sky       #89dceb;
+@define-color teal      #94e2d5;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color peach     #fab387;
+@define-color maroon    #eba0ac;
+@define-color red       #f38ba8;
+@define-color mauve     #cba6f7;
+@define-color pink      #f5c2e7;
+@define-color flamingo  #f2cdcd;
+@define-color rosewater #f5e0dc;
 
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "Noto Sans", "Font Awesome 6 Free", sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    min-height: 0;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 window#waybar {
-    background: transparent;
-    color: #cdd6f4;
+  background-color: transparent;
+  color: @text;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
-tooltip {
-    background: #1e1e2e;
-    border: 1px solid #cba6f7;
-    border-radius: 12px;
+/* --- MODULES --- */
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background: transparent;
+  padding: 5px;
 }
 
-tooltip label {
-    color: #cdd6f4;
-}
-
-/* --- MODULE CONTAINERS (ISLANDS) --- */
-
-#custom-power,
+/* Base style for all modules */
+#custom-launch,
 #workspaces,
-#mpris,
+#custom-media,
+#custom-weather,
+#custom-calendar,
+#custom-google-calendar,
 #clock,
-#window,
 #tray,
-#battery,
-.modules-right > box > box {
-    background: #1e1e2e;
-    padding: 6px 14px;
-    margin: 6px 4px;
-    border-radius: 16px;
-    border: 1px solid #313244;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Groups (Hardware/Settings) should be transparent containers */
-#group-hardware,
-#group-settings {
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-}
-
-/* --- LEFT MODULES --- */
-
+#network,
+#custom-system,
+#group-power,
 #custom-power {
-    color: #f38ba8;
-    padding-left: 16px;
-    padding-right: 18px;
-    font-size: 18px;
-    margin-left: 10px;
+  background: rgba(30, 30, 46, 0.75);
+  color: @text;
+  padding: 4px 12px;
+  margin: 4px 5px;
+  border-radius: 12px;
+  border: 1px solid rgba(137, 180, 250, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* backdrop-filter not supported in GTK CSS, handled by compositor */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-#workspaces {
-    padding: 0 8px;
+/* Hover Effects */
+#custom-launch:hover,
+#workspaces:hover,
+#custom-media:hover,
+#custom-weather:hover,
+#clock:hover,
+#tray:hover,
+#network:hover,
+#custom-system:hover,
+#group-power:hover {
+  box-shadow: 0 0 10px @blue;
+  border-color: @blue;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* --- SPECIFIC MODULES --- */
+
+#custom-launch {
+  color: @blue;
+  font-size: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    color: #7f849c;
-    border-radius: 12px;
-    margin: 4px 2px;
-    transition: all 0.3s ease;
-}
-
-#workspaces button.active {
-    color: #cba6f7;
-    background: #313244;
-    min-width: 30px;
+  padding: 0 6px;
+  color: @overlay1;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 #workspaces button:hover {
-    background: #313244;
-    color: #cdd6f4;
+  background: rgba(137, 180, 250, 0.2);
+  color: @text;
 }
 
-#mpris {
-    color: #a6e3a1;
+#workspaces button.active {
+  color: @base;
+  background: linear-gradient(45deg, @mauve, @blue);
+  padding: 0 10px;
+  font-weight: 900;
 }
 
-/* --- CENTER MODULES --- */
+#workspaces button.urgent {
+  background-color: @red;
+  color: @base;
+}
+
+#custom-media {
+  color: @green;
+  border-color: rgba(166, 227, 161, 0.3);
+}
+
+#custom-media.stopped {
+  color: @overlay0;
+}
+
+#custom-weather {
+  color: @yellow;
+}
+
+#custom-calendar {
+  color: @lavender;
+  font-weight: 900;
+}
+
+#custom-google-calendar {
+  color: @pink;
+  font-weight: 900;
+}
 
 #clock {
-    color: #89b4fa;
-    font-size: 15px;
-    padding: 6px 20px;
+  color: @mauve;
+  font-size: 14px;
+  background: rgba(30, 30, 46, 0.9);
 }
 
-#window {
-    color: #cdd6f4;
+#custom-system {
+  color: @peach;
+}
+#custom-system.warning {
+  color: @maroon;
+  background: rgba(235, 160, 172, 0.2);
+  animation: pulse 2s infinite;
+}
+#custom-system.critical {
+  color: @red;
+  background: rgba(243, 139, 168, 0.2);
+  animation: blink 1s infinite alternate;
 }
 
-/* --- RIGHT MODULES --- */
+#network {
+  color: @sky;
+}
+
+#network.disconnected {
+  color: @red;
+}
 
 #tray {
-    padding: 0 14px;
+  background: rgba(30, 30, 46, 0.5);
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #f38ba8;
-}
-
-/* Hardware Group Colors */
-#cpu { color: #f38ba8; }
-#memory { color: #fab387; }
-#temperature { color: #f9e2af; }
-
-/* Settings Group Colors */
-#network { color: #89b4fa; }
-#bluetooth { color: #b4befe; }
-#pulseaudio { color: #cba6f7; }
-#backlight { color: #f9e2af; }
-
-/* Spacing for items inside groups */
-#cpu, #memory, #temperature,
-#network, #bluetooth, #pulseaudio, #backlight {
-    padding: 0 8px;
-}
-
-/* Battery */
-#battery {
-    color: #a6e3a1;
-    margin-right: 10px;
-}
-
-#battery.charging {
-    color: #a6e3a1;
-    animation: breathing 3s infinite;
-}
-
-#battery.warning:not(.charging) {
-    color: #fab387;
-}
-
-#battery.critical:not(.charging) {
-    color: #f38ba8;
-    animation: blink 0.5s infinite alternate;
+#custom-power {
+  color: @red;
+  font-size: 16px;
+  padding: 0 14px;
 }
 
 /* --- ANIMATIONS --- */
 
 @keyframes blink {
-    to {
-        color: #1e1e2e;
-        background-color: #f38ba8;
-    }
+  to {
+    background-color: @red;
+    color: @base;
+  }
 }
 
-@keyframes breathing {
-    0% { opacity: 1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 1; }
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(235, 160, 172, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(235, 160, 172, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(235, 160, 172, 0);
+  }
+}
+
+tooltip {
+  background: rgba(30, 30, 46, 0.95);
+  border: 1px solid @mauve;
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @text;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
 }
