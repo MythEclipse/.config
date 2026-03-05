@@ -1,0 +1,67 @@
+# --- Version Control ---
+.git/
+.gitignore
+
+# --- Browsers & Web ---
+BraveSoftware/
+google-chrome/
+Google/
+Electron/
+
+# --- Communication & Social ---
+discord/
+session/
+ZapZap/
+
+# --- Development & Tools ---
+Code/
+vscode-sqltools/
+github-copilot/
+go/
+nextjs-nodejs/
+turborepo/
+configstore/
+.android/
+Android Open Source Project/
+gitlab/
+Termius/
+
+# --- System & Hardware ---
+dconf/
+pulse/
+rclone/
+gl/
+menus/
+environment.d/
+systemd/
+
+# --- Office & Media ---
+libreoffice/
+RimPy Mod Manager/
+Antigravity/
+OpenRGB/
+predator/
+
+# --- Secrets & Keys ---
+kwalletrc
+kwalletmanagerrc
+*.kdbx
+*.pem
+*.key
+*.ovpn
+*.ssh
+gh/hosts.yml
+
+# --- Cache, Logs & Temp ---
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+cache/
+tmp/
+logs/
+trashrc
+
+# Waybar OAuth credentials
+waybar/scripts/credentials.json
+waybar/scripts/token.json
