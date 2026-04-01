@@ -1,4 +1,4 @@
-; Thunar GtkAccelMap rc-file         -*- scheme -*-
+; thunar GtkAccelMap rc-file         -*- scheme -*-
 ; this file is an automated accelerator map dump
 ;
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-type" "")
@@ -28,15 +28,15 @@
 ; (gtk_accel_path "<Actions>/ThunarActionManager/restore" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-location-alt" "<Alt>d")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/815d5c69d985fcafe16d97ac4bc84dca" "")
-; (gtk_accel_path "<Actions>/ThunarWindow/zoom-out-alt" "<Primary>KP_Subtract")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/select-by-pattern" "<Primary>s")
+; (gtk_accel_path "<Actions>/ThunarWindow/zoom-out-alt" "<Primary>KP_Subtract")
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-file-menu" "F10")
 ; (gtk_accel_path "<Actions>/ThunarWindow/contents" "F1")
 ; (gtk_accel_path "<Actions>/ThunarWindow/show-highlight" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-descending" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-name" "")
-; (gtk_accel_path "<Actions>/ThunarStandardView/select-all-files" "<Primary>a")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/execute" "")
+; (gtk_accel_path "<Actions>/ThunarStandardView/select-all-files" "<Primary>a")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/properties" "<Alt>Return")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/cut-2" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-dtime" "")
@@ -110,6 +110,8 @@
 ; (gtk_accel_path "<Actions>/ThunarStandardView/duplicate" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/trash-delete-2" "KP_Delete")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/back-alt1" "BackSpace")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/48436c8242cb5f463f732d94913e194f" "")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/a58019f3ec9d0335cd577d61142351f6" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/create-folder" "<Primary><Shift>n")
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-home" "<Alt>Home")
 ; (gtk_accel_path "<Actions>/ThunarWindow/switch-focused-split-view-pane" "")
@@ -125,6 +127,5 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/switch-next-tab-alt" "<Primary>Tab")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/sendto-desktop" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/make-link" "")
-; (gtk_accel_path "<Actions>/ThunarBookmarks/ccf057b7818760ad328c148f2f47aa43" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/zoom-reset-alt" "<Primary>KP_0")
 ; (gtk_accel_path "<Actions>/ThunarWindow/about" "")

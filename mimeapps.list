@@ -2,6 +2,7 @@
 video/x-matroska=mpv-2.desktop;
 image/vnd.microsoft.icon=com.google.Chrome.desktop;
 application/x-ipynb+json=antigravity.desktop;
+application/x-zerosize=libreoffice-writer.desktop;
 
 [Default Applications]
 text/html=brave-browser.desktop
@@ -14,3 +15,5 @@ x-scheme-handler/https=brave-browser.desktop
 x-scheme-handler/unknown=brave-browser.desktop
 image/vnd.microsoft.icon=com.google.Chrome.desktop
 x-scheme-handler/discord-831593107883032657=discord-831593107883032657.desktop
+application/x-zerosize=libreoffice-writer.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop

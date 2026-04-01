@@ -1,7 +1,8 @@
 # --- Version Control ---
 .git/
 .gitignore
-
+Antigravity Manager/
+Trae/
 # --- Browsers & Web ---
 BraveSoftware/
 google-chrome/
