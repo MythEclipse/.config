@@ -11,9 +11,9 @@
     "custom/weather",
     "custom/calendar",
     "custom/google-calendar",
-    "clock",
+    "clock"
   ],
-  "modules-right": ["tray", "group/system-stats", "network", "group/power"],
+  "modules-right": ["tray", "group/system-stats", "network", "pulseaudio", "backlight", "battery", "group/power"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -29,14 +29,14 @@
       "6": "VI",
       "urgent": "",
       "active": "",
-      "default": "",
-    },
+      "default": ""
+    }
   },
 
   "custom/launch": {
     "format": "",
     "on-click": "wofi --show drun",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "custom/media": {
@@ -46,13 +46,13 @@
     "format-icons": {
       "playing": "",
       "paused": "",
-      "stopped": "",
+      "stopped": ""
     },
     "exec": "~/.config/waybar/scripts/mediaplayer_live.py",
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl previous",
-    "escape": true,
+    "escape": true
   },
 
   "custom/weather": {
@@ -60,7 +60,7 @@
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/weather_openmeteo.py",
     "interval": 300,
-    "on-click": "xdg-open https://open-meteo.com/en/docs",
+    "on-click": "xdg-open https://open-meteo.com/en/docs"
   },
 
   "custom/calendar": {
@@ -68,7 +68,7 @@
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/waybar_calendar.py",
     "interval": 60,
-    "on-click": "xdg-open https://calendar.google.com",
+    "on-click": "xdg-open https://calendar.google.com"
   },
 
   "custom/google-calendar": {
@@ -76,25 +76,25 @@
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/.venv/bin/python3 ~/.config/waybar/scripts/google_calendar.py",
     "interval": 60,
-    "on-click": "xdg-open https://calendar.google.com",
+    "on-click": "xdg-open https://calendar.google.com"
   },
 
   "clock": {
     "format": "{:%H:%M:%S}  ",
     "interval": 1,
-    "tooltip": false,
+    "tooltip": false
   },
 
   "group/system-stats": {
     "orientation": "horizontal",
-    "modules": ["custom/system"],
+    "modules": ["custom/system"]
   },
 
   "custom/system": {
     "format": "{}",
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/system_stat.py",
-    "interval": 2,
+    "interval": 2
   },
 
   "network": {
@@ -103,12 +103,12 @@
     "tooltip-format": "{ifname} via {gwaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "⚠ Disconnected",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
 
   "tray": {
     "icon-size": 18,
-    "spacing": 10,
+    "spacing": 10
   },
 
   "group/power": {
@@ -116,32 +116,61 @@
     "drawer": {
       "transition-duration": 500,
       "children-class": "not-power",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
-    "modules": ["custom/power", "custom/lock", "custom/quit", "custom/reboot"],
+    "modules": ["custom/power", "custom/lock", "custom/quit", "custom/reboot"]
   },
 
   "custom/power": {
     "format": "",
     "tooltip": false,
-    "on-click": "wlogout",
+    "on-click": "wlogout"
   },
 
   "custom/lock": {
     "format": "",
     "tooltip": false,
-    "on-click": "swaylock",
+    "on-click": "swaylock"
   },
 
   "custom/quit": {
     "format": "",
     "tooltip": false,
-    "on-click": "hyprctl dispatch exit",
+    "on-click": "hyprctl dispatch exit"
   },
 
   "custom/reboot": {
     "format": "",
     "tooltip": false,
-    "on-click": "reboot",
+    "on-click": "reboot"
   },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{timeTo}\n{capacity}%"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟  Muted",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "format": "{icon}  {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-"
+  }
 }

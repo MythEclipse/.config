@@ -66,6 +66,9 @@ window#waybar {
 #clock,
 #tray,
 #network,
+#pulseaudio,
+#backlight,
+#battery,
 #custom-system,
 #group-power,
 #custom-power {
@@ -88,6 +91,9 @@ window#waybar {
 #clock:hover,
 #tray:hover,
 #network:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
 #custom-system:hover,
 #group-power:hover {
   box-shadow: 0 0 10px @blue;
@@ -177,6 +183,34 @@ window#waybar {
 
 #network.disconnected {
   color: @red;
+}
+
+#pulseaudio {
+  color: @blue;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#battery {
+  color: @teal;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.charging {
+  color: @green;
 }
 
 #tray {
