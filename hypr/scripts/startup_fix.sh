@@ -10,6 +10,11 @@ waybar &
 hyprpaper &
 dunst &
 
+# Ensure Zapzap is running (sometimes fails on early exec-once)
+if ! pgrep -x "zapzap" > /dev/null; then
+    /usr/bin/zapzap --ozone-platform-hint=auto &
+fi
+
 # Force Apply Theme (Karena kadang ke-reset)
 gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
