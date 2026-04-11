@@ -5,15 +5,14 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "height": 44,
+  "height": 50,
   "modules-left": ["custom/launch", "hyprland/workspaces", "custom/media"],
   "modules-center": [
-    "custom/weather",
     "custom/calendar",
     "custom/google-calendar",
     "clock"
   ],
-  "modules-right": ["tray", "group/system-stats", "network", "pulseaudio", "backlight", "battery", "group/power"],
+  "modules-right": ["tray", "custom/predator", "group/system-stats", "network", "pulseaudio", "backlight", "battery", "group/power"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -53,14 +52,6 @@
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl previous",
     "escape": true
-  },
-
-  "custom/weather": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/weather_openmeteo.py",
-    "interval": 300,
-    "on-click": "xdg-open https://open-meteo.com/en/docs"
   },
 
   "custom/calendar": {
@@ -172,5 +163,13 @@
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "brightnessctl set 5%+",
     "on-scroll-down": "brightnessctl set 5%-"
+  },
+  "custom/predator": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 2,
+    "exec": "~/.config/waybar/scripts/predator_status.sh",
+    "on-click": "~/.local/bin/predator-mode",
+    "tooltip": true
   }
 }
