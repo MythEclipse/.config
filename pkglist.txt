@@ -338,3 +338,4 @@ xdg-utils
 yay-debug
 zathura
 zathura-pdf-mupdf
+lib32-llvm-libs

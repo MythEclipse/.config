@@ -73,9 +73,92 @@ fi
 echo -e "\n${YELLOW}📦 Installing Core Packages...${NC}"
 if [ -f "pkglist.txt" ]; then
     echo "Processing pkglist.txt..."
-    grep -v '^#' pkglist.txt | grep -v '^$' | xargs $AUR_HELPER -S --needed --noconfirm
+    
+    # 1. Fetch available packages from official repositories (core, extra, multilib)
+    echo -e "${BLUE}🔍 Fetching official repository package list...${NC}"
+    REPO_PKGS=$(mktemp)
+    if ! pacman -Sql core extra multilib > "$REPO_PKGS" 2>/dev/null; then
+        # Fallback if specific repos are not enabled or pacman -Sql fails
+        pacman -Sl | awk '{print $2}' | sort -u > "$REPO_PKGS"
+    fi
+
+    if [[ ! -s "$REPO_PKGS" ]]; then
+        echo -e "${RED}❌ Error: Repository package list is empty.${NC}"
+        echo -e "${RED}This usually indicates a problem with your pacman database.${NC}"
+        rm -f "$REPO_PKGS"
+        exit 1
+    fi
+
+    # 2. Sanitize pkglist.txt
+    # - Using awk to handle comments and whitespace robustly
+    CLEAN_PKGLIST=$(mktemp)
+    awk '{gsub(/#.*/,""); if($1!="") print $1}' pkglist.txt | sort -u > "$CLEAN_PKGLIST"
+
+    # 3. Split pkglist into Native and AUR
+    NATIVE_PKGS=$(mktemp)
+    AUR_PKGS=$(mktemp)
+
+    # Use grep -Fxf for exact fixed string matching against repo list
+    grep -Fxf "$REPO_PKGS" "$CLEAN_PKGLIST" | sort -u > "$NATIVE_PKGS"
+    # Use grep -Fxvf to find what's NOT in repo list (AUR)
+    grep -Fxvf "$REPO_PKGS" "$CLEAN_PKGLIST" | sort -u > "$AUR_PKGS"
+
+    # 4. Validation step (Set equality check)
+    COMBINED_SPLIT=$(mktemp)
+    cat "$NATIVE_PKGS" "$AUR_PKGS" | sort -u > "$COMBINED_SPLIT"
+
+    if ! diff "$CLEAN_PKGLIST" "$COMBINED_SPLIT" >/dev/null; then
+        echo -e "${RED}⚠️ Warning: Package classification mismatch!${NC}"
+        echo "The set of split packages does not match the sanitized input list."
+        echo "Missing/Extra packages:"
+        diff "$CLEAN_PKGLIST" "$COMBINED_SPLIT" | grep '^[-+><]'
+        echo "Proceeding with caution..."
+    else
+        echo -e "${GREEN}✅ Package list successfully verified (Set Equality Pass).${NC}"
+    fi
+    rm -f "$COMBINED_SPLIT"
+
+    # 5. Review Lists
+    if [ -s "$NATIVE_PKGS" ]; then
+        echo -e "\n${BLUE}📋 Native packages to install:${NC}"
+        sed 's/^/  /' "$NATIVE_PKGS"
+    fi
+    if [ -s "$AUR_PKGS" ]; then
+        echo -e "\n${BLUE}📋 AUR packages to install:${NC}"
+        sed 's/^/  /' "$AUR_PKGS"
+    fi
+
+    # 6. Install Native Packages
+    if [ -s "$NATIVE_PKGS" ]; then
+        echo -e "\n${BLUE}⬇️ Installing Native Packages from Official Repositories...${NC}"
+        # Using --needed and --noconfirm for smooth installation
+        if ! sudo pacman -S --needed --noconfirm - < "$NATIVE_PKGS"; then
+            echo -e "${RED}❌ Error: Failed to install some native packages!${NC}"
+            echo "Please check the output above for details."
+            # We exit here because core packages are usually required
+            rm -f "$REPO_PKGS" "$CLEAN_PKGLIST" "$NATIVE_PKGS" "$AUR_PKGS"
+            exit 1
+        fi
+    else
+        echo -e "${YELLOW}No native packages found to install.${NC}"
+    fi
+
+    # 7. Install AUR Packages
+    if [ -s "$AUR_PKGS" ]; then
+        echo -e "\n${BLUE}⬇️ Installing AUR Packages via $AUR_HELPER...${NC}"
+        if ! $AUR_HELPER -S --needed --noconfirm - < "$AUR_PKGS"; then
+            echo -e "${RED}❌ Warning: Failed to install some AUR packages!${NC}"
+            echo "You may need to install them manually later."
+        fi
+    else
+        echo -e "${YELLOW}No AUR packages found to install.${NC}"
+    fi
+
+    # Cleanup temp files
+    rm -f "$REPO_PKGS" "$CLEAN_PKGLIST" "$NATIVE_PKGS" "$AUR_PKGS"
 else
-    echo -e "${RED}pkglist.txt not found! Skipping core packages.${NC}"
+    echo -e "${RED}❌ Error: pkglist.txt not found! Cannot proceed with package installation.${NC}"
+    exit 1
 fi
 
 # --- 4. Install Specific Drivers ---
@@ -85,29 +168,29 @@ echo -e "\n${YELLOW}🔧 Installing Drivers & Tools...${NC}"
 case $GPU_VENDOR in
     "nvidia")
         echo "Installing NVIDIA Drivers..."
-        $AUR_HELPER -S --needed --noconfirm nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
+        sudo pacman -S --needed --noconfirm nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
         ;;
     "amd")
         echo "Installing AMD Drivers..."
-        $AUR_HELPER -S --needed --noconfirm mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
+        sudo pacman -S --needed --noconfirm mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
         ;;
     "intel")
         echo "Installing Intel Drivers..."
-        $AUR_HELPER -S --needed --noconfirm mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver
+        sudo pacman -S --needed --noconfirm mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver
         ;;
 esac
 
 # Laptop Tools
 if [ "$IS_LAPTOP" = true ]; then
     echo "Installing Laptop Tools (Brightness, Power)..."
-    $AUR_HELPER -S --needed --noconfirm brightnessctl tlp
+    sudo pacman -S --needed --noconfirm brightnessctl tlp
     sudo systemctl enable --now tlp.service
 fi
 
 # VM Tools
 if [ "$IS_VM" = true ]; then
     echo "Installing VM Tools (Spice, Clipboard)..."
-    $AUR_HELPER -S --needed --noconfirm spice-vdagent
+    sudo pacman -S --needed --noconfirm spice-vdagent
 fi
 
 
