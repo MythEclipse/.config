@@ -48,6 +48,7 @@ window#waybar {
 #backlight,
 #battery,
 #custom-system,
+#custom-notification,
 #custom-power {
   padding: 0 10px;
   margin: 0 5px;
@@ -101,4 +102,11 @@ window#waybar {
 
 #custom-power {
   color: @red;
+}
+
+#custom-notification {
+  color: @mauve;
+  padding: 0 12px;
+  margin: 0 8px;
+  min-width: 20px;
 }

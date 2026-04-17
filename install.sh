@@ -37,13 +37,13 @@ echo -e "\n${YELLOW}🔍 Detecting Hardware...${NC}"
 
 # Detect GPU
 GPU_VENDOR=""
-if lspci -k | grep -A 2 -E \"(VGA|3D)\" | grep -iq "nvidia"; then
+if lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq "nvidia"; then
     GPU_VENDOR="nvidia"
     echo -e "Detected GPU: ${GREEN}NVIDIA${NC}"
-elif lspci -k | grep -A 2 -E \"(VGA|3D)\" | grep -iq "amd"; then
+elif lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq "amd"; then
     GPU_VENDOR="amd"
     echo -e "Detected GPU: ${GREEN}AMD${NC}"
-elif lspci -k | grep -A 2 -E \"(VGA|3D)\" | grep -iq "intel"; then
+elif lspci -k | grep -A 2 -E "(VGA|3D)" | grep -iq "intel"; then
     GPU_VENDOR="intel"
     echo -e "Detected GPU: ${GREEN}INTEL${NC}"
 else
@@ -85,15 +85,15 @@ case $GPU_VENDOR in
     "nvidia")
         echo "Installing NVIDIA Drivers..."
         $AUR_HELPER -S --needed --noconfirm nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
-        ;;;;
+        ;;
     "amd")
         echo "Installing AMD Drivers..."
         $AUR_HELPER -S --needed --noconfirm mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
-        ;;;;
+        ;;
     "intel")
         echo "Installing Intel Drivers..."
         $AUR_HELPER -S --needed --noconfirm mesa lib32-mesa vulkan-intel lib32-vulkan-intel intel-media-driver
-        ;;;;
+        ;;
 esac
 
 # Laptop Tools
@@ -195,19 +195,19 @@ case $GPU_VENDOR in
     "nvidia")
         ln -s "$CONF_DIR/nvidia.conf" "$GPU_CONF"
         echo -e "Linked ${GREEN}nvidia.conf${NC}"
-        ;;;;
+        ;;
     "amd")
         ln -s "$CONF_DIR/amd.conf" "$GPU_CONF"
         echo -e "Linked ${GREEN}amd.conf${NC}"
-        ;;;;
+        ;;
     "intel")
         ln -s "$CONF_DIR/intel.conf" "$GPU_CONF"
         echo -e "Linked ${GREEN}intel.conf${NC}"
-        ;;;;
+        ;;
     *)
         echo -e "${RED}No specific GPU config found for '$GPU_VENDOR'. Creating empty default.${NC}"
         touch "$GPU_CONF"
-        ;;;;
+        ;;
 esac
 
 

@@ -75,6 +75,9 @@ If you prefer to do it manually:
    ./install.sh
    ```
 
+## 🛠️ Recent Fixes
+- Recorded fix: syntax errors in `install.sh` were corrected and audited to ensure the installer parses cleanly.
+
 ## ⌨️ Keybindings (Highlights)
 | Key | Action |
 |-----|--------|

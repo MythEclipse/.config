@@ -3,31 +3,31 @@
   <knowledge>
     <li>
       <key>WorldCameraMovement</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>ReformCaravan</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Rescuing</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Capturing</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>ShieldBelts</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>InteractingWithTraders</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Drafting</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>GroupGotoHereDragging</key>
@@ -39,11 +39,11 @@
     </li>
     <li>
       <key>AnimalsDontAttackDoors</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>BillsTab</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>OpeningComms</key>
@@ -51,39 +51,39 @@
     </li>
     <li>
       <key>DrugAddiction</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>DrugPolicies</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>TVForSickPeople</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>PrisonerTab</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>SetGrowingZonePlant</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>DrugBurning</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>DoorOpenSpeed</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>QueueOrders</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Shelves</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Books</key>
@@ -91,51 +91,51 @@
     </li>
     <li>
       <key>CameraDolly</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>CameraZoom</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>TimeControls</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Pause</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Stockpiles</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Forbidding</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>GrowingFood</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>EquippingWeapons</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Alerts</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Mining</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>WorkTab</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>ForbiddingDoors</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>CoverAndShooting</key>
@@ -143,31 +143,31 @@
     </li>
     <li>
       <key>FormCaravan</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>AnimalTaming</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>AnimalTraining</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>InfoCard</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>StorageTab</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>HomeArea</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>SpoilageAndFreezers</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Deterioration</key>
@@ -175,11 +175,11 @@
     </li>
     <li>
       <key>HostilityResponse</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>AllowedAreas</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>MedicalOperations</key>
@@ -187,11 +187,11 @@
     </li>
     <li>
       <key>TimeAssignments</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>ManualWorkPriorities</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>GettingMoreTraders</key>
@@ -199,11 +199,11 @@
     </li>
     <li>
       <key>TileInspector</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Outfits</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>FirePreparation</key>
@@ -215,7 +215,7 @@
     </li>
     <li>
       <key>ClickingMessages</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>ShotAccuracyTooltip</key>
@@ -231,11 +231,11 @@
     </li>
     <li>
       <key>ArrestingCreatesEnemies</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>SwitchFlickingDesignation</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>MaxNumberOfPlayerSettlements</key>
@@ -287,15 +287,15 @@
     </li>
     <li>
       <key>GenesAndXenotypes</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Mechanitors</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>MechsInCaravans</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>CapturingEntities</key>
@@ -339,7 +339,299 @@
     </li>
     <li>
       <key>Fishing</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>FFF_EnvironmentalBill</key>
       <value>0</value>
+    </li>
+    <li>
+      <key>DMS_WeaponSystems</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>DMS_Autofacturer</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>DMS_DronePlatform</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>DMS_Drone</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>DMS_HeavyWeapon</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>DMSAC_Hacking</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>WG_ParkingSpot</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>WG_WalkerFrame</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>WG_ModuleItem</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>WG_Module_Repair</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>WG_Frame_PilotSchedule</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>WG_Frame_Wreckage</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>WG_Gantry_LinkBuilding</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>WG_Gantry_LoadModule</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>WG_Gantry_PayloadCapacity</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>WG_Gantry_Overloaded</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>WG_Gantry_Repair</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>WG_Frame_Capture</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>GuestBeds</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>RecruitGuest</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>GuestWork</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>Hospitality</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>TM_Portals</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>TM_Enchanting</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>TM_EnchantingII</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>BuildersTryMine</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>Concept_SimpleSidearmsBasic</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>Concept_SidearmsDropping</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>Concept_SidearmsMissing</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>Concept_SimpleSidearmsPreference</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>Concept_SimpleSidearmsAdvancedRanged</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>Concept_SimpleSidearmsAdvancedMelee</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>Concept_SimpleSidearmsAdvancedDrafted</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>Concept_SimpleSidearmsLosingWeapons</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>Concept_CEOverride</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>GUC_Animal_Handling</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>BM_Mounting</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>BM_Enemy_Mounting</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_ReusableNeolithicProjectiles</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_Reload</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_ReloadNoMag</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_ReloadAuto</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_ReloadManned</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_FireModes</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_AimModes</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_Spotting</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_MortarDirectFire</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_AimingSystem</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_Stabilizing</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_Shields</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_AutoLoader</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_DetailedMeleeTooltip</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_InventoryWeightBulk</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_Loadouts</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_AmmoCrafting</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_ObtainingFSX</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_ObtainingPrometheum</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_CentipedeArmor</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_ArmorSystem</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_SuppressionReaction</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_Hunkering</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_WornBulk</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_Crouching</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_NightVision</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_MuzzleFlash</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_TargettedModes</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_Bipods</key>
+      <value>1</value>
+    </li>
+    <li>
+      <key>CE_TargettedModesMelee</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_GiveAmmo</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_ParentLoadouts</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_AdHocLoadouts</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>CE_AmmoSettings</key>
+      <value>1</value>
     </li>
   </knowledge>
 </ConceptKnowledge>

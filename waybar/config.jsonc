@@ -12,7 +12,7 @@
     "custom/google-calendar",
     "clock"
   ],
-  "modules-right": ["tray", "custom/predator", "group/system-stats", "network", "pulseaudio", "backlight", "battery", "group/power"],
+  "modules-right": ["custom/notification", "tray", "custom/predator", "group/system-stats", "network", "pulseaudio", "backlight", "battery", "group/power"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -171,5 +171,25 @@
     "exec": "~/.config/waybar/scripts/predator_status.sh",
     "on-click": "~/.local/bin/predator-mode",
     "tooltip": true
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }

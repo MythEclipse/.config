@@ -66,3 +66,4 @@ trashrc
 # Waybar OAuth credentials
 waybar/scripts/credentials.json
 waybar/scripts/token.json
+unity3d/**
