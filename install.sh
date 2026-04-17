@@ -72,7 +72,8 @@ fi
 # --- 3. Install Core Packages ---
 echo -e "\n${YELLOW}📦 Installing Core Packages...${NC}"
 if [ -f "pkglist.txt" ]; then
-    $AUR_HELPER -S --needed --noconfirm - < pkglist.txt
+    echo "Processing pkglist.txt..."
+    grep -v '^#' pkglist.txt | grep -v '^$' | xargs $AUR_HELPER -S --needed --noconfirm
 else
     echo -e "${RED}pkglist.txt not found! Skipping core packages.${NC}"
 fi
