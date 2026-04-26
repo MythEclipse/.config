@@ -39,6 +39,9 @@
     "menubar"
   ],
   "widget-config": {
+    "notifications": {
+      "group-by-app": true
+    },
     "title": {
       "text": "Notifications",
       "clear-all-button": true,

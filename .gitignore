@@ -8,7 +8,7 @@ BraveSoftware/
 google-chrome/
 Google/
 Electron/
-
+nix/**
 # --- Communication & Social ---
 discord/
 session/
