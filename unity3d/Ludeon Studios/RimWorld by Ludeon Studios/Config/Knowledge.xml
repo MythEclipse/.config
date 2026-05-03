@@ -637,5 +637,17 @@
       <key>FFF_MechTrade</key>
       <value>0</value>
     </li>
+    <li>
+      <key>USAC_CreditBonds</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>USAC_Bodybag</key>
+      <value>0</value>
+    </li>
+    <li>
+      <key>USAC_AssaultRig</key>
+      <value>0</value>
+    </li>
   </knowledge>
 </ConceptKnowledge>

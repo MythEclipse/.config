@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PrefsData>
-  <volumeMaster>0.1216216</volumeMaster>
+  <volumeMaster>1</volumeMaster>
   <volumeGame>1</volumeGame>
-  <volumeMusic>0.9078624</volumeMusic>
+  <volumeMusic>0</volumeMusic>
   <volumeAmbient>1</volumeAmbient>
   <volumeUI>1</volumeUI>
   <screenWidth>1920</screenWidth>
@@ -25,7 +25,7 @@
   <highlightStyleMode>Silhouettes</highlightStyleMode>
   <visibleMood>True</visibleMood>
   <twelveHourClock>False</twelveHourClock>
-  <adaptiveTrainingEnabled>True</adaptiveTrainingEnabled>
+  <adaptiveTrainingEnabled>False</adaptiveTrainingEnabled>
   <steamDeckKeyboardMode>False</steamDeckKeyboardMode>
   <preferredNames />
   <resourceReadoutCategorized>False</resourceReadoutCategorized>
