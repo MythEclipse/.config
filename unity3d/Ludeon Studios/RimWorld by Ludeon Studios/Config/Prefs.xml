@@ -13,7 +13,7 @@
   <hatsOnlyOnMap>False</hatsOnlyOnMap>
   <plantWindSway>True</plantWindSway>
   <screenShakeIntensity>1</screenShakeIntensity>
-  <textureCompression>False</textureCompression>
+  <textureCompression>True</textureCompression>
   <showRealtimeClock>False</showRealtimeClock>
   <disableTinyText>False</disableTinyText>
   <animalNameMode>None</animalNameMode>

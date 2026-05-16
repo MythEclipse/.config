@@ -1,0 +1,55 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "9router": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "https://9router.asepharyana.tech/v1",
+        "apiKey": "sk-6ef1b4a4e42da998-46myne-ae6b97b3",
+      },
+      "models": {
+        "MythEclipse": {
+          "name": "MythEclipse",
+        },
+        "kr/claude-sonnet-4.5": {
+          "name": "kr/claude-sonnet-4.5",
+        },
+      },
+    },
+  },
+  "model": "9router/MythEclipse",
+  "agent": {
+    "explorer": {
+      "description": "Fast explorer subagent for codebase exploration",
+      "mode": "subagent",
+      "model": "9router/MythEclipse",
+    },
+  },
+  "permission": {
+    "edit": {
+      "packages/opencode/migration/*": "deny",
+    },
+  },
+  "mcp": {
+    "code-review-graph": {
+      "type": "local",
+      "command": ["uvx", "code-review-graph", "serve"],
+      "timeout": 120000,
+    },
+    "context7": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "ctx7sk-81d82138-88cb-4aec-8301-c802eaf135d1",
+      ],
+      "enabled": true,
+    },
+  },
+  "tools": {
+    "github-triage": false,
+    "github-pr-search": false,
+  },
+}

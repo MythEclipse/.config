@@ -25,12 +25,12 @@
     <li>cp.us.military.kit</li>
     <li>frozensnowfox.filthvanisheswithrainandtime</li>
     <li>nals.facialanimation</li>
+    <li>og.recruit.guest</li>
     <li>rh2.faction.gruppa.krovi</li>
     <li>rh2.faction.task.force.141</li>
     <li>rh2.faction.utilitarian</li>
     <li>sbz.neatstorage</li>
     <li>brrainz.achtung</li>
-    <li>blue.adaptivetps</li>
     <li>mlie.allmemoriesfade</li>
     <li>unlimitedhugs.allowtool</li>
     <li>sarg.alphabooks</li>
@@ -51,6 +51,7 @@
     <li>biomesteam.coreframework</li>
     <li>automatic.bionicicons</li>
     <li>fuu.bloodanimations</li>
+    <li>olli.butterplusplus</li>
     <li>orion.cashregister</li>
     <li>tot.celetech.mkiii</li>
     <li>void.charactereditor</li>
@@ -69,7 +70,6 @@
     <li>dubwise.dubsbreakmod</li>
     <li>dubwise.dubsmintmenus</li>
     <li>dubwise.dubsmintminimap</li>
-    <li>dubwise.dubsperformanceanalyzer.steam</li>
     <li>nilchei.dynamicdiplomacycontinued</li>
     <li>zeracronius.dynamictradeinterface</li>
     <li>tixiv.easycaravanandgo</li>
@@ -116,7 +116,6 @@
     <li>6224y.onewithdeath</li>
     <li>peppsen.pmusic</li>
     <li>llunak.pathfindingavoidance</li>
-    <li>arkymn.slowerpawntickrate</li>
     <li>fluffy.pharmacist</li>
     <li>mehni.pickupandhaul</li>
     <li>side1iner.possessionsplus</li>
@@ -197,15 +196,14 @@
     <li>vanillaracesexpanded.android</li>
     <li>vanillaracesexpanded.sanguophage</li>
     <li>vanillaexpanded.vanillasocialinteractionsexpanded</li>
+    <li>vanillaexpanded.vanillatradingexpanded</li>
     <li>vanillaexpanded.vanillatraitsexpanded</li>
     <li>oskarpotocki.vanillavehiclesexpanded</li>
-    <li>alexispopcorn.vac.base</li>
     <li>ogliss.wanderjoinsplus</li>
     <li>cozarkian.wateriscold</li>
     <li>sl4vp0wer.weareunited</li>
     <li>co.uk.epicguru.whatsthatmod</li>
     <li>godsfathermixtape.worksitesexpanded</li>
-    <li>mlie.yayoscaravan</li>
     <li>mlie.yayoscombat3</li>
     <li>torann.arimworldofmagic</li>
     <li>sarg.alphagenes</li>
@@ -231,6 +229,7 @@
     <li>sinnamon.moreritualrewards</li>
     <li>xubisca.privacyplease</li>
     <li>spdskatr.projectrimfactory</li>
+    <li>cj.rimtalk</li>
     <li>aoba.deadmanswitch.core</li>
     <li>gt.sam.tilledsoil</li>
     <li>princeofpluto.vehicles.trains</li>
@@ -241,9 +240,7 @@
     <li>vanillaexpanded.vpsycastse</li>
     <li>vanillaexpanded.skills</li>
     <li>cn.vfeempirelessrequirement</li>
-    <li>zipender.vac.honkaistarrail</li>
     <li>tsa.worlddomination</li>
-    <li>syrus.yayoscombataddon</li>
     <li>com.abobashark.zoologymod</li>
     <li>frozensnowfox.betterexplorationloot</li>
     <li>kupa.alphagenesintegrated</li>
@@ -263,6 +260,13 @@
     <li>zal.morearchotechgarbage</li>
     <li>ferny.progressioneducation</li>
     <li>com.spdskatr.projectrimfactory.insanity</li>
+    <li>ruaji.rimtalkpromptenhance</li>
+    <li>cj.rimtalk.literature</li>
+    <li>cj.rimtalk.expandmemory</li>
+    <li>rimtalk.quests</li>
+    <li>saltgin.rimtalkeventmemory</li>
+    <li>nitoritech.rimtalk.tts</li>
+    <li>rp.rimtalk.personadirector</li>
     <li>memegoddess.searchanddestroy</li>
     <li>nirahiel.skipdoordelivery</li>
     <li>aoba.deadmanswitch.ancientcorps</li>
@@ -279,6 +283,7 @@
     <li>frozensnowfox.complexjobs</li>
     <li>automatichydroponics.expanded</li>
     <li>xavior.glittertech</li>
+    <li>sanguo.rimtalk.expandactions</li>
     <li>dms.proton.jointoperations</li>
     <li>aoba.deadmanswitch.mobiledragoon</li>
     <li>aoba.exosuit.amp</li>

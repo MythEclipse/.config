@@ -35,7 +35,7 @@
     </li>
     <li>
       <key>BuildOrbitalTradeBeacon</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>AnimalsDontAttackDoors</key>
@@ -47,7 +47,7 @@
     </li>
     <li>
       <key>OpeningComms</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>DrugAddiction</key>
@@ -227,7 +227,7 @@
     </li>
     <li>
       <key>TradeGoodsMustBeNearBeacon</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>ArrestingCreatesEnemies</key>
@@ -459,7 +459,7 @@
     </li>
     <li>
       <key>Concept_SidearmsMissing</key>
-      <value>0</value>
+      <value>0.8</value>
     </li>
     <li>
       <key>Concept_SimpleSidearmsPreference</key>
@@ -471,7 +471,7 @@
     </li>
     <li>
       <key>Concept_SimpleSidearmsAdvancedMelee</key>
-      <value>0</value>
+      <value>1</value>
     </li>
     <li>
       <key>Concept_SimpleSidearmsAdvancedDrafted</key>

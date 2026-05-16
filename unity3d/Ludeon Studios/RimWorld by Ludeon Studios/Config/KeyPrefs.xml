@@ -778,27 +778,6 @@
     </value>
   </li>
   <li>
-    <key>DubsOptimizerKey</key>
-    <value>
-      <keyBindingA>None</keyBindingA>
-      <keyBindingB>None</keyBindingB>
-    </value>
-  </li>
-  <li>
-    <key>DubsOptimizerRestartKey</key>
-    <value>
-      <keyBindingA>None</keyBindingA>
-      <keyBindingB>None</keyBindingB>
-    </value>
-  </li>
-  <li>
-    <key>dpa_ToggleAlertBlock</key>
-    <value>
-      <keyBindingA>None</keyBindingA>
-      <keyBindingB>None</keyBindingB>
-    </value>
-  </li>
-  <li>
     <key>RocketKeyBindingDisable</key>
     <value>
       <keyBindingA>None</keyBindingA>
@@ -835,6 +814,27 @@
   </li>
   <li>
     <key>HotkeyTeleport</key>
+    <value>
+      <keyBindingA>None</keyBindingA>
+      <keyBindingB>None</keyBindingB>
+    </value>
+  </li>
+  <li>
+    <key>DubsOptimizerKey</key>
+    <value>
+      <keyBindingA>None</keyBindingA>
+      <keyBindingB>None</keyBindingB>
+    </value>
+  </li>
+  <li>
+    <key>DubsOptimizerRestartKey</key>
+    <value>
+      <keyBindingA>None</keyBindingA>
+      <keyBindingB>None</keyBindingB>
+    </value>
+  </li>
+  <li>
+    <key>dpa_ToggleAlertBlock</key>
     <value>
       <keyBindingA>None</keyBindingA>
       <keyBindingB>None</keyBindingB>
