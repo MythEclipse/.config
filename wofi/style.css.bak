@@ -1,0 +1,55 @@
+/* 
+   Premium Floating Island Wofi Theme 
+*/
+
+window {
+    margin: 5px;
+    border: 2px solid rgba(203, 166, 247, 0.4);
+    background-color: rgba(30, 30, 46, 0.7);
+    border-radius: 16px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+#input {
+    margin: 15px;
+    border: 1px solid rgba(137, 180, 250, 0.4);
+    border-radius: 15px;
+    background-color: rgba(17, 17, 27, 0.8);
+    color: #cdd6f4;
+    padding: 12px;
+}
+
+#inner-box {
+    margin: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 10px;
+}
+
+#text {
+    margin: 10px;
+}
+
+#entry {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+#entry:selected {
+    background: linear-gradient(90deg, rgba(203, 166, 247, 0.6), rgba(137, 180, 250, 0.6));
+}
+
+#entry:selected #text {
+    color: #ffffff;
+    font-weight: bold;
+}

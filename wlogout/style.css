@@ -1,66 +1,100 @@
+/*
+ * Wlogout — Predator Glass Power Menu
+ * Catppuccin Mocha + Predator accent
+ */
+
 * {
-	background-image: none;
-	box-shadow: none;
+  background-image: none;
+  box-shadow: none;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
 }
 
+/* ── Full Screen Overlay ─────────────────────────────────── */
 window {
-	background-color: rgba(30, 30, 46, 0.9);
+  background: rgba(17, 17, 27, 0.82);
 }
 
+/* ── Button Base ─────────────────────────────────────────── */
 button {
-    border-radius: 20px;
-    border-color: #313244;
-	text-decoration-color: #cdd6f4;
-    color: #cdd6f4;
-	background-color: #1e1e2e;
-	border-style: solid;
-	border-width: 2px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 25%;
-    margin: 10px;
-    transition: all 0.2s ease-in-out;
+  border-radius: 18px;
+  border: 1px solid rgba(108, 112, 134, 0.35);
+  background: rgba(30, 30, 46, 0.65);
+  color: #cdd6f4;
+  font-size: 13px;
+  font-weight: 600;
+  background-repeat: no-repeat;
+  background-position: center 35%;
+  background-size: 45px;
+  padding-top: 90px;
+  margin: 12px;
+  min-width: 120px;
+  min-height: 150px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 button:focus {
-    background-color: #1e1e2e;
-    border-color: #45475a;
+  outline: none;
+  border-color: rgba(203, 166, 247, 0.4);
+  background-color: rgba(49, 50, 68, 0.65);
 }
 
-/* Base hover style for background */
-button:hover, button:active {
-	background-color: #313244;
-	outline-style: none;
-}
-
-/* Individual Border Colors on Hover for that "Cool" look */
-#lock:hover      { border-color: #f9e2af; box-shadow: 0 0 10px rgba(249, 226, 175, 0.4); } /* Yellow */
-#logout:hover    { border-color: #a6e3a1; box-shadow: 0 0 10px rgba(166, 227, 161, 0.4); } /* Green */
-#suspend:hover   { border-color: #89b4fa; box-shadow: 0 0 10px rgba(137, 180, 250, 0.4); } /* Blue */
-#hibernate:hover { border-color: #cba6f7; box-shadow: 0 0 10px rgba(203, 166, 247, 0.4); } /* Purple */
-#shutdown:hover  { border-color: #f38ba8; box-shadow: 0 0 10px rgba(243, 139, 168, 0.4); } /* Red */
-#reboot:hover    { border-color: #fab387; box-shadow: 0 0 10px rgba(250, 179, 135, 0.4); } /* Orange */
-
+/* ── Per-action colour accents on hover ──────────────────── */
 #lock {
-    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+  background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+#lock:hover, #lock:focus:hover {
+  background-color: rgba(249, 226, 175, 0.15);
+  border-color: rgba(249, 226, 175, 0.60);
+  color: #f9e2af;
+  box-shadow: 0 0 22px rgba(249, 226, 175, 0.18), inset 0 0 0 1px rgba(249, 226, 175, 0.20);
 }
 
 #logout {
-    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+  background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+#logout:hover, #logout:focus:hover {
+  background-color: rgba(166, 227, 161, 0.15);
+  border-color: rgba(166, 227, 161, 0.60);
+  color: #a6e3a1;
+  box-shadow: 0 0 22px rgba(166, 227, 161, 0.18), inset 0 0 0 1px rgba(166, 227, 161, 0.20);
 }
 
 #suspend {
-    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+  background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+#suspend:hover, #suspend:focus:hover {
+  background-color: rgba(137, 180, 250, 0.15);
+  border-color: rgba(137, 180, 250, 0.60);
+  color: #89b4fa;
+  box-shadow: 0 0 22px rgba(137, 180, 250, 0.18), inset 0 0 0 1px rgba(137, 180, 250, 0.20);
 }
 
 #hibernate {
-    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+  background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
 }
-
-#shutdown {
-    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+#hibernate:hover, #hibernate:focus:hover {
+  background-color: rgba(203, 166, 247, 0.15);
+  border-color: rgba(203, 166, 247, 0.60);
+  color: #cba6f7;
+  box-shadow: 0 0 22px rgba(203, 166, 247, 0.18), inset 0 0 0 1px rgba(203, 166, 247, 0.20);
 }
 
 #reboot {
-    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+  background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
+#reboot:hover, #reboot:focus:hover {
+  background-color: rgba(250, 179, 135, 0.15);
+  border-color: rgba(250, 179, 135, 0.60);
+  color: #fab387;
+  box-shadow: 0 0 22px rgba(250, 179, 135, 0.18), inset 0 0 0 1px rgba(250, 179, 135, 0.20);
+}
+
+#shutdown {
+  background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+#shutdown:hover, #shutdown:focus:hover {
+  background-color: rgba(243, 139, 168, 0.15);
+  border-color: rgba(243, 139, 168, 0.60);
+  color: #f38ba8;
+  box-shadow: 0 0 22px rgba(243, 139, 168, 0.18), inset 0 0 0 1px rgba(243, 139, 168, 0.20);
 }

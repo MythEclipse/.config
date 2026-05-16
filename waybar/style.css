@@ -1,45 +1,42 @@
-/* 
-   GOD-TIER Premium Floating Glass Theme
-   Designed for Hyprland + Tokyonight/Catppuccin
-*/
+/*
+ * Predator Glass — Waybar Premium Theme
+ * Palette: Catppuccin Mocha (dark) / Catppuccin Latte (light)
+ * Theme diswitch via symlink: ~/.config/waybar/themes/active.css
+ */
 
-@define-color base   rgba(30, 30, 46, 0.6);
-@define-color mantle rgba(24, 24, 37, 0.8);
-@define-color crust  rgba(17, 17, 27, 0.9);
+/* ── Active Theme (symlinked by dark-light-toggle) ────────── */
+@import "themes/active.css";
 
-@define-color text     #cdd6f4;
-@define-color blue      #89b4fa;
-@define-color mauve     #cba6f7;
-@define-color red       #f38ba8;
-@define-color green     #a6e3a1;
-@define-color yellow    #f9e2af;
-@define-color peach     #fab387;
-@define-color teal      #94e2d5;
-
+/* ── Global ───────────────────────────────────────────────── */
 * {
-  font-family: "JetBrainsMono Nerd Font", sans-serif;
-  font-size: 14px;
-  font-weight: bold;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ── Bar Window ───────────────────────────────────────────── */
 window#waybar {
-  background-color: transparent;
+  background: transparent;
   color: @text;
 }
 
+/* ── Module Pill Groups ───────────────────────────────────── */
 .modules-left,
 .modules-center,
 .modules-right {
   background: @base;
-  padding: 2px 10px;
-  margin: 10px 15px;
-  border-radius: 16px;
-  border: 1px solid rgba(203, 166, 247, 0.3);
-  /* Backdrop blur is handled by Hyprland (windowrule) */
+  padding: 3px 8px;
+  margin: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(203, 166, 247, 0.18);
 }
 
-/* Individual Module Styles */
-#custom-launch,
+/* ── Base Padding for all modules ─────────────────────────── */
 #workspaces,
 #clock,
 #tray,
@@ -47,35 +44,194 @@ window#waybar {
 #pulseaudio,
 #backlight,
 #battery,
+#cpu,
+#memory,
+#temperature,
+#custom-gpu,
+#custom-launch,
+#custom-media,
+#custom-calendar,
+#custom-google-calendar,
+#custom-theme-toggle,
 #custom-system,
 #custom-notification,
-#custom-power {
-  padding: 0 10px;
-  margin: 0 5px;
-  transition: all 0.3s ease;
+#custom-predator,
+#custom-power,
+#custom-lock,
+#custom-quit,
+#custom-reboot {
+  padding: 2px 10px;
+  margin: 2px 3px;
+  color: @text;
+  border-radius: 10px;
+}
+
+/* ── Workspaces ───────────────────────────────────────────── */
+#workspaces {
+  padding: 2px 4px;
 }
 
 #workspaces button {
-  color: #6c7086;
-  padding: 0 4px;
+  color: @subtext;
+  opacity: 0.5;
+  padding: 1px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-width: 24px;
 }
 
 #workspaces button.active {
   color: @mauve;
-  background: rgba(203, 166, 247, 0.1);
-  border-radius: 10px;
+  background: rgba(203, 166, 247, 0.15);
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 1;
+}
+
+#workspaces button.urgent {
+  color: @red;
+  background: rgba(243, 139, 168, 0.15);
+  opacity: 1;
+  animation: blink 0.8s linear infinite alternate;
 }
 
 #workspaces button:hover {
   color: @text;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  background: rgba(127, 132, 156, 0.12);
+  border-radius: 8px;
+  opacity: 1;
 }
 
+/* ── App Launcher ─────────────────────────────────────────── */
+#custom-launch {
+  color: @mauve;
+  font-size: 20px;
+  padding: 2px 14px;
+  margin-right: 2px;
+}
+
+#custom-launch:hover {
+  color: @lavender;
+  background: rgba(136, 57, 239, 0.12);
+}
+
+/* ── Media Player ─────────────────────────────────────────── */
+#custom-media {
+  color: @green;
+}
+
+#custom-media.playing {
+  color: @green;
+}
+
+#custom-media.paused {
+  color: @subtext;
+}
+
+/* ── Calendar Modules ─────────────────────────────────────── */
+#custom-calendar {
+  color: @teal;
+  font-size: 13px;
+}
+
+#custom-calendar:hover {
+  color: @sky;
+  background: rgba(23, 146, 153, 0.10);
+  border-radius: 8px;
+}
+
+#custom-google-calendar {
+  color: @blue;
+  font-size: 13px;
+}
+
+#custom-google-calendar:hover {
+  color: @lavender;
+  background: rgba(30, 102, 245, 0.10);
+  border-radius: 8px;
+}
+
+/* ── Clock ─────────────────────────────────────────────────── */
 #clock {
+  color: @yellow;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+#clock:hover {
+  color: @peach;
+  background: rgba(223, 142, 29, 0.08);
+}
+
+/* ── Dark / Light Toggle ─────────────────────────────────── */
+#custom-theme-toggle {
+  font-size: 16px;
+  padding: 2px 12px;
   color: @yellow;
 }
 
+#custom-theme-toggle:hover {
+  background: rgba(223, 142, 29, 0.12);
+  border-radius: 10px;
+}
+
+/* ── System Stats Group ───────────────────────────────────── */
+#cpu {
+  color: @sky;
+}
+
+#cpu.high {
+  color: @red;
+  animation: pulse 1s infinite;
+}
+
+#memory {
+  color: @lavender;
+}
+
+#memory.critical {
+  color: @red;
+}
+
+#temperature {
+  color: @peach;
+}
+
+#temperature.critical {
+  color: @red;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+#custom-gpu {
+  color: @green;
+}
+
+/* ── Network ──────────────────────────────────────────────── */
+#network {
+  color: @teal;
+}
+
+#network.disconnected {
+  color: @red;
+}
+
+/* ── Audio ────────────────────────────────────────────────── */
+#pulseaudio {
+  color: @blue;
+}
+
+#pulseaudio.muted {
+  color: @subtext;
+  opacity: 0.6;
+}
+
+/* ── Backlight ─────────────────────────────────────────────── */
+#backlight {
+  color: @yellow;
+}
+
+/* ── Battery ──────────────────────────────────────────────── */
 #battery {
   color: @teal;
 }
@@ -84,29 +240,129 @@ window#waybar {
   color: @green;
 }
 
-#battery.critical:not(.charging) {
+#battery.plugged {
+  color: @green;
+}
+
+#battery.good {
+  color: @teal;
+}
+
+#battery.warning:not(.charging):not(.plugged) {
+  color: @yellow;
+}
+
+#battery.critical:not(.charging):not(.plugged) {
   color: @red;
+  animation: blink 1s linear infinite alternate;
 }
 
-#pulseaudio {
-  color: @blue;
+/* ── Predator Thermal ─────────────────────────────────────── */
+#custom-predator {
+  color: @mauve;
+  font-weight: 700;
+  padding: 2px 12px;
+  background: rgba(136, 57, 239, 0.07);
+  border-radius: 10px;
+  border: 1px solid rgba(136, 57, 239, 0.2);
 }
 
-#network {
+#custom-predator:hover {
+  background: rgba(136, 57, 239, 0.14);
+  border-color: rgba(136, 57, 239, 0.4);
+}
+
+/* ── Notification Bell ─────────────────────────────────────── */
+#custom-notification {
+  color: @mauve;
+  font-size: 16px;
+  padding: 2px 12px;
+}
+
+#custom-notification:hover {
+  color: @lavender;
+  background: rgba(136, 57, 239, 0.08);
+}
+
+/* ── System Tray ──────────────────────────────────────────── */
+#tray {
+  padding: 2px 8px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: rgba(210, 15, 57, 0.2);
+  border-radius: 6px;
+}
+
+/* ── Power Group ──────────────────────────────────────────── */
+#custom-power {
+  color: @red;
+  font-size: 16px;
+  padding: 2px 10px;
+}
+
+#custom-power:hover {
+  background: rgba(210, 15, 57, 0.12);
+  border-radius: 10px;
+}
+
+#custom-lock {
+  color: @yellow;
+}
+
+#custom-lock:hover {
+  background: rgba(223, 142, 29, 0.12);
+  border-radius: 10px;
+}
+
+#custom-quit {
+  color: @green;
+}
+
+#custom-quit:hover {
+  background: rgba(64, 160, 43, 0.12);
+  border-radius: 10px;
+}
+
+#custom-reboot {
   color: @peach;
 }
 
-#tray {
-  margin-left: 10px;
+#custom-reboot:hover {
+  background: rgba(254, 100, 11, 0.12);
+  border-radius: 10px;
 }
 
-#custom-power {
-  color: @red;
+.not-power {
+  color: @subtext;
+  font-size: 15px;
 }
 
-#custom-notification {
-  color: @mauve;
-  padding: 0 12px;
-  margin: 0 8px;
-  min-width: 20px;
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes blink {
+  to { opacity: 0.4; }
+}
+
+@keyframes pulse {
+  0%   { background: transparent; }
+  50%  { background: rgba(210, 15, 57, 0.08); }
+  100% { background: transparent; }
+}
+
+/* ── Tooltip ──────────────────────────────────────────────── */
+tooltip {
+  background: @surface0;
+  border: 1px solid rgba(136, 57, 239, 0.25);
+  border-radius: 10px;
+  color: @text;
+  font-size: 12px;
+}
+
+tooltip label {
+  padding: 2px 4px;
 }

@@ -1,0 +1,23 @@
+/*
+ * Waybar — DARK Theme (Catppuccin Mocha)
+ * Dipanggil via symlink dari ~/.config/waybar/themes/active.css
+ */
+
+/* ── Colour Palette (Catppuccin Mocha) ───────────────────── */
+@define-color base       rgba(17, 17, 27, 0.55);
+@define-color surface0   rgba(30, 30, 46, 0.60);
+@define-color surface1   rgba(49, 50, 68, 0.65);
+@define-color overlay0   rgba(108, 112, 134, 0.50);
+
+@define-color text        #cdd6f4;
+@define-color subtext     #a6adc8;
+@define-color blue        #89b4fa;
+@define-color mauve       #cba6f7;
+@define-color lavender    #b4befe;
+@define-color red         #f38ba8;
+@define-color green       #a6e3a1;
+@define-color yellow      #f9e2af;
+@define-color peach       #fab387;
+@define-color teal        #94e2d5;
+@define-color pink        #f5c2e7;
+@define-color sky         #89dceb;

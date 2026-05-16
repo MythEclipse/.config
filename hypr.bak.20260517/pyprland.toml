@@ -1,0 +1,21 @@
+[pyprland]
+plugins = [
+ "scratchpads",
+ "expose",
+ "magnify",
+ "shift_monitors",
+]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class pypr-term"
+class = "pypr-term"
+size = "75% 60%"
+max_size = "1920 800"
+
+[scratchpads.volume]
+animation = "fromRight"
+command = "pavucontrol"
+class = "org.pulseaudio.pavucontrol"
+size = "40% 90%"
+unfocus = "hide"

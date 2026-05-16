@@ -1,21 +1,39 @@
 [pyprland]
 plugins = [
- "scratchpads",
- "expose",
- "magnify",
- "shift_monitors",
+  "scratchpads",
+  "expose",
+  "magnify",
+  "shift_monitors",
+  "toggle_dpms",
 ]
 
 [scratchpads.term]
 animation = "fromTop"
 command = "kitty --class pypr-term"
 class = "pypr-term"
-size = "75% 60%"
+size = "72% 58%"
 max_size = "1920 800"
+margin = 0
+lazy = false
 
 [scratchpads.volume]
 animation = "fromRight"
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
-size = "40% 90%"
+size = "38% 88%"
 unfocus = "hide"
+lazy = false
+
+[scratchpads.btop]
+animation = "fromBottom"
+command = "kitty --class pypr-btop btop"
+class = "pypr-btop"
+size = "85% 65%"
+max_size = "1920 900"
+
+[expose]
+include_special = false
+
+[magnify]
+# Initial magnification factor
+factor = 2.0

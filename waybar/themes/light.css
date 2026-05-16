@@ -1,0 +1,23 @@
+/*
+ * Waybar — LIGHT Theme (Catppuccin Latte)
+ * Dipanggil via symlink dari ~/.config/waybar/themes/active.css
+ */
+
+/* ── Colour Palette (Catppuccin Latte) ───────────────────── */
+@define-color base       rgba(239, 241, 245, 0.75);
+@define-color surface0   rgba(204, 208, 218, 0.72);
+@define-color surface1   rgba(188, 192, 204, 0.65);
+@define-color overlay0   rgba(156, 160, 176, 0.60);
+
+@define-color text        #4c4f69;
+@define-color subtext     #6c6f85;
+@define-color blue        #1e66f5;
+@define-color mauve       #8839ef;
+@define-color lavender    #7287fd;
+@define-color red         #d20f39;
+@define-color green       #40a02b;
+@define-color yellow      #df8e1d;
+@define-color peach       #fe640b;
+@define-color teal        #179299;
+@define-color pink        #ea76cb;
+@define-color sky         #04a5e5;

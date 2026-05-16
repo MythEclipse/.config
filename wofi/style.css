@@ -1,55 +1,80 @@
-/* 
-   Premium Floating Island Wofi Theme 
-*/
+/*
+ * Wofi — Predator Glass Launcher Theme
+ */
 
+/* ── Window Container ─────────────────────────────────────── */
 window {
-    margin: 5px;
-    border: 2px solid rgba(203, 166, 247, 0.4);
-    background-color: rgba(30, 30, 46, 0.7);
-    border-radius: 16px;
-    font-family: "JetBrainsMono Nerd Font", monospace;
+  background: rgba(17, 17, 27, 0.80);
+  border: 1px solid rgba(203, 166, 247, 0.25);
+  border-radius: 18px;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 14px;
+  color: #cdd6f4;
 }
 
+/* ── Search Input ─────────────────────────────────────────── */
 #input {
-    margin: 15px;
-    border: 1px solid rgba(137, 180, 250, 0.4);
-    border-radius: 15px;
-    background-color: rgba(17, 17, 27, 0.8);
-    color: #cdd6f4;
-    padding: 12px;
+  margin: 14px 14px 4px 14px;
+  padding: 10px 16px;
+  border: 1px solid rgba(137, 180, 250, 0.30);
+  border-radius: 12px;
+  background: rgba(30, 30, 46, 0.70);
+  color: #cdd6f4;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
 }
 
+#input:focus {
+  border-color: rgba(203, 166, 247, 0.55);
+  background: rgba(30, 30, 46, 0.85);
+}
+
+/* ── Boxes ────────────────────────────────────────────────── */
 #inner-box {
-    margin: 10px;
-    border: none;
-    background-color: transparent;
+  margin: 6px 8px;
+  background: transparent;
 }
 
 #outer-box {
-    margin: 0px;
-    border: none;
-    background-color: transparent;
+  margin: 0;
+  background: transparent;
 }
 
 #scroll {
-    margin: 10px;
+  margin: 0 6px 8px 6px;
 }
 
 #text {
-    margin: 10px;
+  margin: 0 4px;
+  color: #cdd6f4;
 }
 
+/* ── List Items ───────────────────────────────────────────── */
 #entry {
-    margin: 5px;
-    padding: 8px;
-    border-radius: 15px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin: 2px 4px;
+  transition: all 0.15s ease;
 }
 
-#entry:selected {
-    background: linear-gradient(90deg, rgba(203, 166, 247, 0.6), rgba(137, 180, 250, 0.6));
+#entry:selected,
+#entry:focus,
+#entry:hover {
+  background: rgba(203, 166, 247, 0.14);
+  outline: none;
 }
 
 #entry:selected #text {
-    color: #ffffff;
-    font-weight: bold;
+  color: #cba6f7;
+}
+
+#entry:selected #img {
+  filter: brightness(1.1);
+}
+
+/* ── App Icon ─────────────────────────────────────────────── */
+#img {
+  margin-right: 10px;
+  border-radius: 6px;
 }
