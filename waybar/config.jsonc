@@ -6,14 +6,18 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 60,
-  "modules-left": ["custom/launch", "hyprland/workspaces", "custom/media"],
+  "modules-left": [
+    "custom/launch",
+    "hyprland/workspaces",
+    "group/system-stats",
+    "custom/media"
+  ],
   "modules-center": ["custom/calendar", "custom/google-calendar", "clock"],
   "modules-right": [
     "custom/notification",
     "tray",
     "custom/theme-toggle",
     "custom/predator",
-    "group/system-stats",
     "network",
     "pulseaudio",
     "backlight",
@@ -61,7 +65,7 @@
   "custom/media": {
     "format": "{icon} {text}",
     "return-type": "json",
-    "max-length": 45,
+    "max-length": 25,
     "format-icons": {
       "playing": "󰎈",
       "paused": "󰏤",
@@ -162,6 +166,7 @@
   },
 
   "network": {
+    "max-length": 15,
     "format-wifi": "󰖩 {essid}",
     "format-ethernet": "󰈀 LAN",
     "format-disconnected": "󰖪 Offline",
